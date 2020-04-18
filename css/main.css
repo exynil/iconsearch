@@ -1,0 +1,6 @@
+#notification {
+    position: fixed;
+    left: 45%;
+    top: 50px;
+    z-index: 999;
+}
