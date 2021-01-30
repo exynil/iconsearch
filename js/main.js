@@ -4,26 +4,37 @@ document.getElementById('iconname').onchange = function () {
     search(this.value);
 }
 
-function search(name) {
+function addIcons() {
     buttons.innerHTML = '';
     for (let j = 0; j < icons.length; j++) {
-        if (icons[j].name.indexOf(name) != -1 || name == '') {
-            let i = document.createElement('i');
-            i.className = 'mdi mdi-36px mdi-' + icons[j].name;
+        let i = document.createElement('i');
+        i.className = 'mdi mdi-36px mdi-' + icons[j].name;
 
-            i.onmouseup = function () {
-                copyText(String.fromCodePoint(parseInt(icons[j].hex, 16)))
-            }
+        i.onmouseup = function () {
+            copyText(String.fromCodePoint(parseInt(icons[j].hex, 16)))
+        }
 
-            let span = document.createElement('span');
-            span.className = 'icon';
+        let span = document.createElement('span');
+        span.className = 'icon';
 
-            let button = document.createElement('button');
-            button.className = 'button';
+        let button = document.createElement('button');
+        button.className = 'button';
 
-            span.appendChild(i);
-            button.appendChild(span);
-            buttons.appendChild(button);
+        span.appendChild(i);
+        button.appendChild(span);
+        buttons.appendChild(button);
+    }
+}
+
+function search(name) {
+    name = name.toLowerCase()
+    for (let i = 0; i < buttons.childElementCount; i++) {
+        className = buttons.children[i].lastChild.lastChild.className
+        if (className.includes(name)) {
+            buttons.children[i].classList.remove("is-hidden")
+        }
+        else {
+            buttons.children[i].classList.add("is-hidden")
         }
     }
 }
@@ -43,6 +54,6 @@ function copyText(text) {
         document.body.removeChild(copyFrom);
         document.getElementById('notification').removeChild(copied);
     }, 1500);
-};
+}
 
-search('');
+addIcons()
