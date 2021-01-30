@@ -4,6 +4,6 @@
 
 Версия шрифта: `5.4.55`
 
-[Оф. сайт](https://materialdesignicons.com)
+[materialdesignicons.com](https://materialdesignicons.com)
 
-[Aur](https://aur.archlinux.org/packages/ttf-material-design-icons-git)
+[Пакет в Aur](https://aur.archlinux.org/packages/ttf-material-design-icons-git)
