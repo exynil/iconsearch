@@ -2,7 +2,7 @@
 
 Удобный поиск иконок Material Design Icons.
 
-Версия шрифта: `5.4.55`
+Версия шрифта: `6.5.95`
 
 [materialdesignicons.com](https://materialdesignicons.com)
 
